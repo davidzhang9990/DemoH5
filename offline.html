@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html manifest="/t/app.manifest">
+<head>
+<title>Demo</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="/t/css/app.css" />
+<link rel="stylesheet" type="text/css" href="/t/css/demo.css" />
+<script type="text/javascript" src="/t/js/app.js"></script>
+<script type="text/javascript" src="/t/js/demo.js"></script>
+</head>
+<script>
+    applicationCache.addEventListener('updateready', function(e) {
+        if (applicationCache.status == applicationCache.UPDATEREADY) {
+ 
+            applicationCache.swapCache(); //使用新版本资源
+            window.location.reload(); //刷新页面
+        }
+    }, false);
+</script>
+<body>
+俯首江左有梅郎~
+</body>
+</html>
